@@ -3,14 +3,14 @@ Categories:
 License: LGPL-2.1-only
 AuthorName: Fcitx5 for Android Contributors
 WebSite: https://fcitx5-android.github.io
-SourceCode: https://github.com/JavaZeroo/fcitx5-android/
-IssueTracker: https://github.com/JavaZeroo/fcitx5-android//issues
+SourceCode: https://github.com/JavaZeroo/fcitx5-android
+IssueTracker: https://github.com/JavaZeroo/fcitx5-android/issues
 Translation: https://explore.transifex.com/fcitx/fcitx5-android
 
 AutoName: Fcitx5 for Android
 
 RepoType: git
-Repo: https://github.com/JavaZeroo/fcitx5-android/
+Repo: https://github.com/JavaZeroo/fcitx5-android
 
 Builds:
   - versionName: placeholder
