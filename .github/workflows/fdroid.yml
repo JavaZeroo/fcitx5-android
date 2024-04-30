@@ -70,7 +70,7 @@ jobs:
           unset GITHUB_ACTIONS GITHUB_STEP_SUMMARY
           curl -Lo /usr/bin/yq "https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64"
           chmod +x /usr/bin/yq
-          versionName="0.0.9-0-g${commitHash:0:8}"
+          versionName="${{ github.sha }}"
           timestamp=$(date +%s)
           baseVersionCode=7
           declare -A abi_list
