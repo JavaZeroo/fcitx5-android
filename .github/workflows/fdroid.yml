@@ -60,7 +60,11 @@ jobs:
           mv $GITHUB_WORKSPACE/build $home_vagrant/build
           ln -s $home_vagrant/build $GITHUB_WORKSPACE/build
           chown -R vagrant $GITHUB_WORKSPACE
-
+      - name: Get short SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::8}" >> $GITHUB_ENV
+  
+      - name: Use short SHA
+        run: echo "The short SHA is $SHORT_SHA"
       - name: Build
         env:
           BUILD_NUMBER: ${{ inputs.build_number || 'lastSuccessfulBuild' }}
@@ -70,7 +74,7 @@ jobs:
           unset GITHUB_ACTIONS GITHUB_STEP_SUMMARY
           curl -Lo /usr/bin/yq "https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64"
           chmod +x /usr/bin/yq
-          versionName="$commitHash"
+          versionName="$SHORT_SHA"
           timestamp=$(date +%s)
           baseVersionCode=7
           declare -A abi_list
