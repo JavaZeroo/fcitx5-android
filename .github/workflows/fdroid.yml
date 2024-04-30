@@ -116,7 +116,7 @@ jobs:
           chown -R vagrant $home_vagrant
           $fdroid fetchsrclibs $build --verbose
           cd $home_vagrant
-          $fdroid build --verbose --test --scan-binary --on-server --no-tarball $build
+          $fdroid build --verbose --test --on-server --no-tarball $build
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
